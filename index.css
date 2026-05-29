@@ -56,7 +56,3 @@ a:link, a:visited {
 #toggle:hover {
     background-color: light-dark(#cae1f7, #354e74)
 }
-
-#toggle:focus {
-    outline: none;
-}
