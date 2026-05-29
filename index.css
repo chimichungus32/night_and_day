@@ -1,0 +1,13 @@
+@font-face {
+    font-family: "Hack";
+    src: url("./font/hack.woff2");
+}
+
+body {
+    font-family: "Hack", monospace;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto; 
+}
