@@ -3,11 +3,60 @@
     src: url("./font/hack.woff2");
 }
 
+:root {
+    color-scheme: light;  /* default */
+
+    & #sun { 
+        display: none; 
+    };
+}
+
+:root.dark {
+    color-scheme: dark;
+
+    & #sun { 
+        display: block; 
+    };
+    & #moon { 
+        display: none; 
+    };
+}
+
 body {
     font-family: "Hack", monospace;
+    background-color: light-dark(#e8f4fd, #0C090A);
+    color: light-dark(#182c4b, #e8f4fd);
 }
 
 .container {
     max-width: 600px;
     margin: 0 auto; 
+}
+
+a:link, a:visited {
+    color: light-dark(#182c4b, #e8f4fd);
+    background-color: transparent;
+}
+
+#about-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+#toggle {
+    margin-top: 15px;
+    width: 40px;
+    height: 40px;
+    background-color: light-dark(#e8f4fd, #0C090A);
+    border: none;
+    border-radius: 10px;
+    transition: background-color 0.2s ease;
+}
+
+#toggle:hover {
+    background-color: light-dark(#cae1f7, #354e74)
+}
+
+#toggle:focus {
+    outline: none;
 }
