@@ -9,6 +9,12 @@
     & #sun { 
         display: none; 
     };
+    & #moon { 
+        display: block; 
+    }
+    & .star {
+        display: none;
+    }
 }
 
 :root.dark {
@@ -16,10 +22,13 @@
 
     & #sun { 
         display: block; 
-    };
+    }
     & #moon { 
         display: none; 
-    };
+    }
+    & .star {
+        display: block;
+    }
 }
 
 body {
@@ -44,7 +53,7 @@ a:link, a:visited {
 }
 
 #toggle {
-    margin-top: 15px;
+    margin-top: 13px;
     width: 40px;
     height: 40px;
     background-color: light-dark(#e8f4fd, #0C090A);
@@ -55,4 +64,24 @@ a:link, a:visited {
 
 #toggle:hover {
     background-color: light-dark(#cae1f7, #354e74)
+}
+
+.star {
+    position: absolute; /* Need this for z index to work */
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%; /* Make stars round */
+    opacity: 0; /* Make stars invisible initially*/
+    animation: shimmer infinite ease-in-out;
+    z-index: -1;
+}
+
+@keyframes shimmer {
+    0%, 100% { 
+        opacity: 0; 
+    }
+    50% { 
+        opacity: 1; 
+    }
 }
